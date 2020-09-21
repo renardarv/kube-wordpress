@@ -20,7 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress-deployment
-  namespace: production
+  namespace: staging 
 spec:
   selector:
     matchLabels:
@@ -42,7 +42,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: wordpress-ingress
-  namespace: production
+  namespace: staging
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
