@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: wordpress:buildnumber
+        image: renardarv/wordpress:buildnumber
         ports:
         - containerPort: 80
       restartPolicy: Always
@@ -47,7 +47,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: wp.renard.my.id
+  - host: wp-stag.renard.my.id
     http:
       paths:
       #- path: /
