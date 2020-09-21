@@ -7,7 +7,7 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-  type: NodePort
+  # type: NodePort
   selector:
     app: wordpress
 ---
@@ -32,20 +32,20 @@ spec:
         ports:
         - containerPort: 80
       restartPolicy: Always
-# ---
-# apiVersion: extensions/v1beta1
-# kind: Ingress
-# metadata:
-#   name: wordpress-ingress
-#   namespace: staging
-#   annotations:
-#     nginx.ingress.kubernetes.io/rewrite-target: /
-# spec:
-#   rules:
-#   - host: wp-stag.renard.my.id
-#     http:
-#       paths:
-#       #- path: /
-#       - backend:
-#           serviceName: wordpress-service
-#           servicePort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+  namespace: staging
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: wp-stag.renard.my.id
+    http:
+      paths:
+      #- path: /
+      - backend:
+          serviceName: wordpress-service
+          servicePort: 80
