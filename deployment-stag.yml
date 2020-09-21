@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: renardarv/wordpress:buildnumber
+        image: renardarv/wordpress-stag:buildnumber
         ports:
         - containerPort: 80
       restartPolicy: Always
