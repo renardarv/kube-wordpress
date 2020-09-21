@@ -20,7 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress-deployment
-  namespace: staging 
+  namespace: staging
 spec:
   selector:
     matchLabels:
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: renardarv/wordpress-stag:buildnumber
+        image: wordpress
         ports:
         - containerPort: 80
       restartPolicy: Always
